@@ -27,20 +27,18 @@ function NewPost() {
   );
 }
 
-function AllPosts() {
+function AllPosts(props) {
+  console.log(props);
   return (
     <div id="posts-index">
       <h1>All posts</h1>
-      <div className="blogpost">
-        <h2>Big Mistake</h2>
-        <p>I started making recipes rather than blog posts.</p>
-        <img src="#" alt="" />
-      </div>
-      <div className="blogpost">
-        <h2>Another Whoops</h2>
-        <p>I forgot to return the content within the App function and the website wouldn't show anything.</p>
-        <img src="#" alt="" />
-      </div>
+      {props.posts.map((post) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+          <img src={post.image} />
+        </div>
+      ))}
     </div>
   );
 }
@@ -54,10 +52,30 @@ function Footer() {
 }
 
 function Content() {
+  let posts = [
+    {
+      id: 1,
+      title: "Same Old, Same Ol'",
+      body: "Yippy skippy!",
+      image: "example",
+    },
+    {
+      id: 2,
+      title: "Some More of the Same",
+      body: "Did I say this already?",
+      image: "example2",
+    },
+    {
+      id: 3,
+      title: "I don't know either",
+      body: "This is what my 2 year olds says.",
+      image: "example3",
+    },
+  ];
   return (
     <div>
       <NewPost />
-      <AllPosts />
+      <AllPosts posts={posts} />
     </div>
   );
 }
