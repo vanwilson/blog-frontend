@@ -31,14 +31,14 @@ function AllPosts() {
   return (
     <div id="posts-index">
       <h1>All posts</h1>
-      <div className="recipes">
-        <h2>Coca-Cola</h2>
-        <p>Buy Coca-Cola and drink from bottle.</p>
+      <div className="blogpost">
+        <h2>Big Mistake</h2>
+        <p>I started making recipes rather than blog posts.</p>
         <img src="#" alt="" />
       </div>
-      <div className="recipes">
-        <h2>Snickers Bar</h2>
-        <p>Buy Snickers Bar, open and enjoy.</p>
+      <div className="blogpost">
+        <h2>Another Whoops</h2>
+        <p>I forgot to return the content within the App function and the website wouldn't show anything.</p>
         <img src="#" alt="" />
       </div>
     </div>
