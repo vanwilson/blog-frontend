@@ -1,5 +1,17 @@
+body {
+  background-image: linear-gradient(#daeaf7, #4fa5d8);
+}
 #posts-new {
   padding: 10px;
+  margin: 0;
+  border: 2px solid #eee;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius: 10px;
+  width: 100%;
+}
+
+button {
+    padding: 10px;
   margin: 10px 0;
   border: 2px solid #eee;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
