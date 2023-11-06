@@ -4,13 +4,13 @@ export function NewPost() {
     <div id="posts-new">
       <h1>New post</h1>
       <form>
-        <div>
+        <div className="box">
           Title: <input type="text" />
         </div>
-        <div>
+        <div className="box">
           Body: <input type="text" />
         </div>
-        <div>
+        <div className="box">
           Image: <input type="url" />
         </div>
       </form>
