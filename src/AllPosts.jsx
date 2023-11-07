@@ -9,6 +9,7 @@ export function AllPosts(props) {
             <h2>{post.title}</h2>
             <p>{post.body}</p>
             <img src={post.image} />
+            <button onClick={props.onShowPost}>More info!</button>
           </div>
         ))}
       </div>

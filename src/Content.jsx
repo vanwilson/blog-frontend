@@ -1,8 +1,19 @@
+import { useState } from "react";
 import { AllPosts } from "./AllPosts";
 import { NewPost } from "./NewPost";
 import { Modal } from "./Modal";
 
 export function Content() {
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+
+  const handleShowPost = () => {
+    setIsPostsShowVisible(true);
+  };
+
+  const handleClose = () => {
+    setIsPostsShowVisible(false);
+  };
+
   let posts = [
     {
       id: 1,
@@ -29,8 +40,8 @@ export function Content() {
   return (
     <div>
       <NewPost />
-      <AllPosts posts={posts} />
-      <Modal show={true}>
+      <AllPosts posts={posts} onShowPost={handleShowPost} />
+      <Modal show={isPostsShowVisible} onClose={handleClose}>
         <p>Welcome to my little slice of heaven.</p>
       </Modal>
     </div>
