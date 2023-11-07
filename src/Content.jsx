@@ -31,7 +31,7 @@ export function Content() {
       <NewPost />
       <AllPosts posts={posts} />
       <Modal show={true}>
-        <p>TEST</p>
+        <p>Welcome to my little slice of heaven.</p>
       </Modal>
     </div>
   );
