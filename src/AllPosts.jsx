@@ -8,7 +8,7 @@ export function AllPosts(props) {
         {props.posts.map((post) => (
           <div key={post.id}>
             <h2>{post.title}</h2>
-            <p>{post.body}</p>
+            {/* <p>{post.body}</p> */}
             <img src={post.image} onClick={props.onShowPost} />
           </div>
         ))}
