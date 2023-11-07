@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export function AllPosts(props) {
   console.log(props);
   return (
@@ -8,8 +9,7 @@ export function AllPosts(props) {
           <div key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
-            <img src={post.image} />
-            <button onClick={props.onShowPost}>More info!</button>
+            <img src={post.image} onClick={props.onShowPost} />
           </div>
         ))}
       </div>
