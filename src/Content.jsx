@@ -1,5 +1,6 @@
 import { AllPosts } from "./AllPosts";
 import { NewPost } from "./NewPost";
+import { Modal } from "./Modal";
 
 export function Content() {
   let posts = [
@@ -29,6 +30,9 @@ export function Content() {
     <div>
       <NewPost />
       <AllPosts posts={posts} />
+      <Modal show={true}>
+        <p>TEST</p>
+      </Modal>
     </div>
   );
 }
