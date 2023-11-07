@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AllPosts } from "./AllPosts";
 import { NewPost } from "./NewPost";
 import { Modal } from "./Modal";
@@ -24,10 +24,11 @@ export function Content() {
     setIsPostsShowVisible(false);
   };
 
+  useEffect(handleIndexPosts, []);
+
   return (
     <div>
       <NewPost />
-      <button onClick={handleIndexPosts}>Load Posts</button>
       <AllPosts posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <p>Welcome to my little slice of heaven.</p>
