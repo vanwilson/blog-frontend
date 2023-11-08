@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { AllPosts } from "./AllPosts";
 import { NewPost } from "./NewPost";
+import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 
 export function Content() {
@@ -34,11 +35,7 @@ export function Content() {
       <NewPost />
       <AllPosts posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <div className="currentPost">
-          <h2>{currentPost.title}</h2>
-          <p>{currentPost.body}</p>
-          <img src={currentPost.image} alt="blog post image" />
-        </div>
+        <PostsShow post={currentPost} />
       </Modal>
     </div>
   );
