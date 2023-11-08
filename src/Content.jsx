@@ -9,6 +9,8 @@ export function Content() {
 
   const [posts, setPosts] = useState([]);
 
+  const [currentPost, setCurrentPost] = useState({});
+
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
       console.log(response.data);
@@ -16,8 +18,9 @@ export function Content() {
     });
   };
 
-  const handleShowPost = () => {
+  const handleShowPost = (post) => {
     setIsPostsShowVisible(true);
+    setCurrentPost(post);
   };
 
   const handleClose = () => {
@@ -31,7 +34,9 @@ export function Content() {
       <NewPost />
       <AllPosts posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <p>Welcome to my little slice of heaven.</p>
+        <h2>{currentPost.title}</h2>
+        <p>{currentPost.body}</p>
+        <p>{currentPost.image}</p>
       </Modal>
     </div>
   );

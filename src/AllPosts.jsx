@@ -9,7 +9,7 @@ export function AllPosts(props) {
           <div key={post.id}>
             <h2>{post.title}</h2>
             {/* <p>{post.body}</p> */}
-            <img src={post.image} onClick={props.onShowPost} />
+            <img src={post.image} onClick={() => props.onShowPost(post)} />
           </div>
         ))}
       </div>
