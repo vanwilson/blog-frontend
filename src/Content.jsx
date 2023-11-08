@@ -34,9 +34,11 @@ export function Content() {
       <NewPost />
       <AllPosts posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <h2>{currentPost.title}</h2>
-        <p>{currentPost.body}</p>
-        <p>{currentPost.image}</p>
+        <div className="currentPost">
+          <h2>{currentPost.title}</h2>
+          <p>{currentPost.body}</p>
+          <img src={currentPost.image} alt="blog post image" />
+        </div>
       </Modal>
     </div>
   );
