@@ -1,26 +1,50 @@
 /* New Recipe form moved into functioin*/
+import axios from "axios";
+
 export function NewPost() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("handle submit");
+    const params = new FormData(event.target);
+    axios
+      .post("http://localhost:3000/posts.json", params)
+      .then((response) => {
+        console.log(response.data);
+        event.target.reset();
+      })
+      .catch((error) => {
+        console.log(error.response.data.errors);
+      });
+  };
+
   return (
     <div id="posts-new">
       <h1>New post</h1>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlInput1" className="form-label">
-          Title
-        </label>
-        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="" />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          Body
-        </label>
-        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlInput1" className="form-label">
-          Image URL
-        </label>
-        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="" />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlInput1" className="form-label">
+            Title
+          </label>
+          <textarea name="title" className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            Body
+          </label>
+          <textarea name="body" className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlInput1" className="form-label">
+            Image URL
+          </label>
+          <textarea name="image" className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        </div>
+        <div>
+          <button type="submit" className="btn btn-secondary">
+            Submit
+          </button>
+        </div>
+      </form>
       {/* <form>
         <div className="box">
           Title: <input type="text" />
