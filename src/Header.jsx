@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg bg-info">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             Navbar
@@ -73,7 +73,7 @@ export function Header() {
           </div>
         </div>
       </nav>
-      <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a>
+      {/* <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a> */}
     </header>
   );
 }
