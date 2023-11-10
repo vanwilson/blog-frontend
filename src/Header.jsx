@@ -1,10 +1,10 @@
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-info">
+      <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            Margin of Air
           </a>
           <button
             className="navbar-toggler"
