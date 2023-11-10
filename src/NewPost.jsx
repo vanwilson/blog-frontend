@@ -1,20 +1,12 @@
 /* New Recipe form moved into functioin*/
-import axios from "axios";
 
-export function NewPost() {
+export function NewPost(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("handle submit");
     const params = new FormData(event.target);
-    axios
-      .post("http://localhost:3000/posts.json", params)
-      .then((response) => {
-        console.log(response.data);
-        event.target.reset();
-      })
-      .catch((error) => {
-        console.log(error.response.data.errors);
-      });
+    console.log("handle submit", params);
+    props.onCreatePost(params);
+    event.target.reset();
   };
 
   return (
