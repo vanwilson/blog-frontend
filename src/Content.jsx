@@ -5,6 +5,7 @@ import { NewPost } from "./NewPost";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
+import { Login } from "./Login";
 
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
@@ -63,6 +64,7 @@ export function Content() {
   return (
     <div className="container">
       <Signup />
+      <Login />
       <NewPost onCreatePost={handleCreatePost} />
       <AllPosts posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
