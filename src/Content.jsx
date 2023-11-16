@@ -6,6 +6,7 @@ import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
@@ -65,6 +66,7 @@ export function Content() {
     <div className="container">
       <Signup />
       <Login />
+      <LogoutLink />
       <NewPost onCreatePost={handleCreatePost} />
       <AllPosts posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
