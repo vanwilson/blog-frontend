@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Signup } from "./Signup";
 import { AllPosts } from "./AllPosts";
 import { NewPost } from "./NewPost";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
-import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 
@@ -64,7 +65,10 @@ export function Content() {
 
   return (
     <div className="container">
-      <Signup />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+
       <Login />
       <LogoutLink />
       <NewPost onCreatePost={handleCreatePost} />

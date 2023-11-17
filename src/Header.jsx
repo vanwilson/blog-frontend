@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Header() {
   return (
     <header>
@@ -25,9 +27,9 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link to="/signup" className="nav-link">
+                  Signup
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
