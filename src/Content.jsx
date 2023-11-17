@@ -8,6 +8,7 @@ import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { About } from "./About";
 
 export function Content() {
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
@@ -66,6 +67,7 @@ export function Content() {
   return (
     <div className="container">
       <Routes>
+        <Route path="/about" element={<About />}></Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<LogoutLink />} />
