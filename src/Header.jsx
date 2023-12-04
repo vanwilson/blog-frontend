@@ -1,6 +1,33 @@
+import { LogoutLink } from "./LogoutLink";
 import { Link } from "react-router-dom";
 
 export function Header() {
+  let authenticationLinks;
+  if (localStorage.jwt === undefined) {
+    authenticationLinks = (
+      <>
+        <li className="nav-item">
+          <Link to="/signup" className="nav-link">
+            Signup
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/login" className="nav-link">
+            Login
+          </Link>
+        </li>
+      </>
+    );
+  } else {
+    authenticationLinks = (
+      <li className="nav-item">
+        <a className="nav-link">
+          <LogoutLink />
+        </a>
+      </li>
+    );
+  }
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-primary">
@@ -31,16 +58,7 @@ export function Header() {
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link">
-                  Signup
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
+              {authenticationLinks}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"

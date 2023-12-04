@@ -71,7 +71,6 @@ export function Content() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<LogoutLink />} />
         <Route path="/posts/new" element={<NewPost onCreatePost={handleCreatePost} />} />
         <Route path="/posts" element={<AllPosts posts={posts} onShowPost={handleShowPost} />} />
       </Routes>

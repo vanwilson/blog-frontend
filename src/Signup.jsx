@@ -3,8 +3,8 @@ import { useState } from "react";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);
-
   const [name, setName] = useState("");
+  const [status, setStatus] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,6 +18,7 @@ export function Signup() {
         window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
+        setStatus(error.response.status);
         console.log(error.response.data.errors);
         setErrors(error.response.data.errors);
       });
@@ -26,6 +27,7 @@ export function Signup() {
   return (
     <div id="signup">
       <h1>Signup</h1>
+      {status ? <img src={`https://http.dog/${status}.jpg`} /> : null}
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
