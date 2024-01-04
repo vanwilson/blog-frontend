@@ -19,7 +19,6 @@ export function Signup() {
       })
       .catch((error) => {
         setStatus(error.response.status);
-        console.log(error.response.data.errors);
         setErrors(error.response.data.errors);
       });
   };

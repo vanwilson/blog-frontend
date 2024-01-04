@@ -8,7 +8,6 @@ import { NewPost } from "./NewPost";
 import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
-import { LogoutLink } from "./LogoutLink";
 import { About } from "./About";
 
 export function Content() {
@@ -20,7 +19,6 @@ export function Content() {
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
-      console.log(response.data);
       setPosts(response.data);
     });
   };

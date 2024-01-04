@@ -4,7 +4,6 @@ export function NewPost(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    console.log("handle submit", params);
     props.onCreatePost(params);
     event.target.reset();
   };
@@ -37,17 +36,6 @@ export function NewPost(props) {
           </button>
         </div>
       </form>
-      {/* <form>
-        <div className="box">
-          Title: <input type="text" />
-        </div>
-        <div className="box">
-          Body: <input type="text" />
-        </div>
-        <div className="box">
-          Image: <input type="url" />
-        </div>
-      </form> */}
     </div>
   );
 }
